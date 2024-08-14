@@ -1,0 +1,26 @@
+{
+  "name": "tenku_automation_testing",
+  "version": "1.0.0",
+  "description": "e2e Automation Testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulinaMontoya/Tenku_Automation_Testing.git"
+  },
+  "keywords": [
+    "e2e-automation-testing",
+    "cypress"
+  ],
+  "author": "Paulina Montoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulinaMontoya/Tenku_Automation_Testing/issues"
+  },
+  "homepage": "https://github.com/PaulinaMontoya/Tenku_Automation_Testing#readme",
+  "devDependencies": {
+    "cypress": "^13.13.2"
+  }
+}

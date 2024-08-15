@@ -41,3 +41,15 @@ export const MEMBERSHIP_PAGE = {
     PRO_PERDIDAS: '500,000',
     PRO_SEGURO_VIDA: '500,000',
 }
+
+export const CONTRACT = {
+    TITLE: 'ESTÁS A UN PASO DE ESTAR PROTEGIDO',
+    PRIVACY_TEXT: 'Tu privacidad es importante para nosotros. Tenku utiliza la información que proporcionas para ponerse en contacto contigo en relación con contenido, productos y servicios relevantes para ti. Puedes darte de baja para dejar de recibir este tipo de comunicaciones en cualquier momento. Si deseas obtener más información sobre la protección de tus datos en Tenku, consulta nuestra Política de Privacidad.',
+    NAME: 'Name',
+    LASTNAME: 'LastName',
+    TELEPHONE: '1234567890',
+    DATE: '1990-02-17',
+    CP: '12345',
+    EMAIL: 'test@email.com',
+    SUCCESS_MESSAGE: 'Registro completadoRecibiras un mensaje con la referencia de pagoReistro completadoRecibiras un mensaje con la referencia de pago'
+}

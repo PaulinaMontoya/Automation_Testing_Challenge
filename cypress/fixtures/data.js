@@ -51,5 +51,5 @@ export const CONTRACT = {
     DATE: '1990-02-17',
     CP: '12345',
     EMAIL: 'test@email.com',
-    SUCCESS_MESSAGE: 'Reigstro completadoRecibiras un mensaje con la referencia de pagoReistro completadoRecibiras un mensaje con la referencia de pago'
+    SUCCESS_MESSAGE: 'Reistro completadoRecibiras un mensaje con la referencia de pagoReistro completadoRecibiras un mensaje con la referencia de pago'
 }

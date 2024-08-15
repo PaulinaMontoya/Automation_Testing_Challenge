@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/PaulinaMontoya/Tenku_Automation_Testing#readme",
   "devDependencies": {
-    "cypress": "^13.13.2"
+    "cypress": "^13.13.2",
+    "cypress-xpath": "^2.0.1"
   }
 }

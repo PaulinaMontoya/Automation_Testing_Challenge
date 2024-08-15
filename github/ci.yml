@@ -1,0 +1,13 @@
+name: e2e UI tests
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6

@@ -1,23 +1,16 @@
-import homePage from "../support/pages/home_page";
-import { URL } from '../fixtures/data';
+import homePage from "../support/pages/home_page"
+import contractPage from "../support/pages/contract_page"
+import { URL, HOME_PAGE } from '../fixtures/data'
 
 describe('Home section', () => {
 
   beforeEach(() => {
     cy.visit(URL.INICIO)
-    homePage.homeSection().should('be.visible')
   })
 
-  it('Banner has expected text', () => {
-
-  })
-
-  it('Banner has expected image', () => {
-
-  })
-
-  it('Button "CONTRATA AQUÍ" sends to expected section', () => {
-
+  it('Home banner has the expected text', () => {
+    homePage.validateTitleTexts()
+    homePage.bannerText().should('have.text', HOME_PAGE.TEXT_BANNER)
   })
 
 })

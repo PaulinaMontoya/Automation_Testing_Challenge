@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "f0c90196-5d32-4485-8720-3f38bdf30662",
+		"name": "Kiosko_Backend_Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16070614"
+	},
+	"item": [
+		{
+			"name": "Positive_Get All Names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Set country variable\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    let valueCountry = jsonData[10].name.common;",
+							"    pm.environment.set(\"country\", valueCountry);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}all",
+					"host": [
+						"{{Base_URL}}all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative_Get All Names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Response matches error message\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Page Not Found\");",
+							"});",
+							"",
+							"pm.test(\"Response matches false value\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData._links.self.templated).to.eql(false);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}",
+					"host": [
+						"{{Base_URL}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Positive_Get Single Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches with the country name\", function () {",
+							"    let country = pm.variables.get(\"country\");",
+							"    pm.expect(pm.response.text()).to.include(country);",
+							"});",
+							"",
+							"pm.test(\"Set capital variable\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    let valueCapital = jsonData[0].capital;",
+							"    pm.environment.set(\"capital\", valueCapital);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}name/{{country}}",
+					"host": [
+						"{{Base_URL}}name"
+					],
+					"path": [
+						"{{country}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Negative_Get Single Country",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Response matches error message value\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"Not Found\");",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}name/xxx",
+					"host": [
+						"{{Base_URL}}name"
+					],
+					"path": [
+						"xxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Positive_Get Capital",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches with the capital name\", function () {",
+							"    let capital = pm.variables.get(\"capital\");",
+							"    pm.expect(pm.response.text()).to.include(capital);",
+							"});",
+							"",
+							"pm.test(\"Set region variable\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    let valueRegion = jsonData[0].region;",
+							"    console.log(valueRegion)",
+							"    pm.environment.set(\"region\", valueRegion);",
+							"});",
+							"",
+							"pm.test(\"Validate JSON data with region variable\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    let region = pm.variables.get(\"region\");",
+							"    pm.expect(jsonData[0].region).to.eql(region);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}capital/{{capital}}",
+					"host": [
+						"{{Base_URL}}capital"
+					],
+					"path": [
+						"{{capital}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Positive_Get All Region",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Set country region variable\", function () {",
+							"    let jsonData = pm.response.json();",
+							"    let valueRegion = jsonData[1].region;",
+							"    pm.environment.set(\"region\", valueRegion);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}all?fields=region",
+					"host": [
+						"{{Base_URL}}all"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "region"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Positive_Get Contries of Region",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response time is less than 400ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body matches with the region name\", function () {",
+							"    let region = pm.variables.get(\"region\");",
+							"    pm.expect(pm.response.text()).to.include(region);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_URL}}region/{{region}}",
+					"host": [
+						"{{Base_URL}}region"
+					],
+					"path": [
+						"{{region}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

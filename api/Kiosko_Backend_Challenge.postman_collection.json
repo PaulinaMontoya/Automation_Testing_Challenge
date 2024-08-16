@@ -198,7 +198,6 @@
 							"pm.test(\"Set region variable\", function () {",
 							"    let jsonData = pm.response.json();",
 							"    let valueRegion = jsonData[0].region;",
-							"    console.log(valueRegion)",
 							"    pm.environment.set(\"region\", valueRegion);",
 							"});",
 							"",

@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "open": "cypress open",
-    "headless": "cypress run --browser chrome --spec cypress/e2e",
+    "headless-chrome": "cypress run --browser chrome --spec cypress/e2e",
+    "headless-firefox": "cypress run --browser firefox --spec cypress/e2e",
+    "headless-electron": "cypress run --browser electron --spec cypress/e2e",
+    "headless-edge": "cypress run --browser edge --spec cypress/e2e",
     "api-test": "newman run 'api/Kiosko_Backend_Challenge.postman_collection.json' -e 'api/envVariables.postman_environment.json'"
   },
   "repository": {

@@ -5,8 +5,6 @@
 - UI Test Sripts: [Tenku Website](https://microsegurosfrontsandbox.z19.web.core.windows.net)
 - API Test Scripts: [REST Countries](https://restcountries.com/)
 
-A step-by-step series of examples that tell you how to execute test scripts locally.
-
 ### Prerequisites
 
 - Install [Node.js](https://nodejs.org/en/download/current/)
@@ -16,7 +14,7 @@ A step-by-step series of examples that tell you how to execute test scripts loca
 
 ## Execute UI Test Scripts
 
-A step by step series of examples that tell you how to get execute test. scripts locally.
+A step-by-step series of examples that tell you how to execute test scripts locally.
 
 **1)** Script to open the Cypress application and visualize the test:
 

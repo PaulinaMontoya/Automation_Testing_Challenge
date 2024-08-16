@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "open": "cypress open",
+    "ui-test": "cypress open",
     "headless-chrome": "cypress run --browser chrome --spec cypress/e2e",
     "headless-firefox": "cypress run --browser firefox --spec cypress/e2e",
     "headless-electron": "cypress run --browser electron --spec cypress/e2e",

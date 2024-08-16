@@ -10,8 +10,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
-          node-version: '12'
-          collectionID: f0c90196-5d32-4485-8720-3f38bdf30662
-          environmentID: 31905c42-5fb1-4688-9a1c-19669a1cf60b
+          node-version: '20'
       - run: npm install -g newman
       - run: npm run api-test

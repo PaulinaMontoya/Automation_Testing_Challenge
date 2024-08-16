@@ -24,21 +24,3 @@ jobs:
           name: cypress-videos
           path: cypress/videos
           if-no-files-found: ignore # 'warn' or 'error' are also available, defaults to `warn`
-name: API test scripts
-on:
-  push:
-    branches:
-    - 'main'
-jobs:
-  newman:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
-        with:
-          node-version: '12'
-          collectionID: f0c90196-5d32-4485-8720-3f38bdf30662
-          environmentID: 31905c42-5fb1-4688-9a1c-19669a1cf60b
-      - run: npm install -g newman
-      - run: npm run api-test
-

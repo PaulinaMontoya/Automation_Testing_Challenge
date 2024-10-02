@@ -1,4 +1,4 @@
-# Kiosko Automation Testing Challenge
+# Automation Testing Challenge
 
 ### Getting Started
 
